@@ -434,7 +434,7 @@ class BotManager:
         requests.get("http://www.gstatic.com/generate_204", proxies={
             "https": proxy,
             "http": proxy
-        })
+        }, timeout=60)
         logger.success("[代理测试] 连接成功！")
         return proxy
 
