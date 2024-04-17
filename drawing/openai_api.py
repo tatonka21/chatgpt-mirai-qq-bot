@@ -43,7 +43,7 @@ class OpenAI(DrawingAPI):
         return [await self.__download_image(image_url)]
 
     async def img_to_img(self, init_images: List[GraiaImage], prompt=''):
-        f = tempfile.mktemp(suffix='.png')
+        f = tempfile.mkstemp(suffix='.png')
         raw_bytes = BytesIO(await init_images[0].get_bytes())
         raw_image = Image.open(raw_bytes)
 
