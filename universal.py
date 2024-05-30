@@ -254,9 +254,6 @@ async def handle_message(_respond: Callable, session_id: str, message: str,
                         conversation_context = await conversation_handler.first_or_create(ai_type)
                         message = message.removeprefix(f'{prefix} ')
                         break
-                else:
-                    # Continue if the inner loop wasn't broken.
-                    continue
                 # Inner loop was broken, break the outer.
                 break
         if not conversation_handler.current_conversation:

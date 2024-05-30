@@ -161,7 +161,6 @@ class TextWrapper(textwrap.TextWrapper):
                             if (self._strlen(prev_line) + self._strlen(self.placeholder) <=
                                     self.width):
                                 lines[-1] = prev_line + self.placeholder
-                                break
                         lines.append(indent + self.placeholder.lstrip())
                     break
 
